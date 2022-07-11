@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cookie_check</title>
+
+<script>
+	
+		function check() {
+//			console.log("cheked");
+			let url = "login.html";
+			let uname = getCookie('username');
+			let upass = getCookie('password');
+			if(uname != null && upass != null){
+//				console.log("cheked323");
+				url = "Welcome.html";
+			}
+			document.getElementById("link").innerHTML = "<a href='" + url + "'>Click here</a> to continue..";
+		}	
+	
+		function getCookie(cname){	//cookie name will come here
+//			console.log("cheked1");
+			let name = cname + "=";
+			let decodedCookie = decodeURIComponent(document.cookie);
+			let ca = decodedCookie.split(';');
+			for(let i = 0; i<ca.length;i++){
+//				console.log("cheked2");
+				let c = ca[i];
+				while(c.charAt(0) == ' '){
+//					console.log("cheked3");
+					c = c.substring(1);
+				}
+				if(c.indexOf(name) == 0){
+//					console.log("cheked4");
+					return c.substring(name.length,c.length);
+				}
+			}
+			return null;
+		}
+	</script>
+</head>
+<body onload="check()">
+	<h2>Index page is most probably the 'HOME PAGE' of every website...!!</h2>
+	
+	<h1>This is Home Page</h1>
+	
+	<h2 id="link"></h2>
+	
+	
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<p>1) login page => checked for the correct username and password => created cookies => successful login..!! (for 24hrs)</p>
+	
+	<p>2) checked for the cookies present or not => if present then no need to login again directed to welcome page => 
+	if not present then need to login again directed to login page => successful login..!! </p>
+	
+</body>
+</html>
