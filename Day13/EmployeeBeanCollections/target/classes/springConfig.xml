@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<bean name="emp" class="com.cdac.component.Employee">
+	
+		<property name="name" value="Radhe" />
+		
+		<property name="phones">
+			<list>
+				<value>8390571799</value>
+				<value>8766594551</value>
+				<value>9422987143</value>
+			</list>
+		</property>
+		
+		<property name="addresses">
+			<set>
+				<value>Sangavi</value>
+				<value>Kambleshwar</value>
+				<value>Baramati</value>
+				<value>Pune</value>
+				<value>Mumbai</value>
+			</set>
+		</property>
+		
+		<property name="courses">
+			<map>
+				<entry key="Core Java" value="3_Months"></entry>
+				<entry key="Adv_Java" value="2_Months"></entry>
+				<entry key="Python" value="1_Months"></entry>
+			</map>
+		</property>
+		
+		<property name="props">
+			<props>
+				<prop key="Name">Aniket</prop>
+				<prop key="Age">22</prop>
+				<prop key="Qualification">PG-DAC</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
